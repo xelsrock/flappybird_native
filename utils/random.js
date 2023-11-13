@@ -22,3 +22,10 @@ export const getPipeSizePosPair = (addPosX = 0) => {
 
   return {pipeTop, pipeBottom}
 };
+
+export const randomColor = (colors) => {
+  const random = Math.floor(Math.random() * colors.length);
+  return colors[random];
+}
+
+

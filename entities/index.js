@@ -2,7 +2,7 @@ import Matter from 'matter-js';
 import Bird from '../components/Bird';
 import Floor from '../components/Floor';
 import Obstacle from '../components/Obstacle';
-import { getPipeSizePosPair } from '../utils/random';
+import { getPipeSizePosPair, randomColor } from '../utils/random';
 
 import { Dimensions } from 'react-native';
 
@@ -22,12 +22,12 @@ export default restart = () => {
   return {
     physics: { engine, world },
 
-    Bird: Bird(world, 'green', { x: 50, y: 300 }, { height: 40, width: 40 }),
+    Bird: Bird(world, 'yellow', { x: 50, y: 300 }, { height: 40, width: 40 }),
 
     ObstacleTop1: Obstacle(
       world,
       'ObstacleTop1',
-      'red',
+      randomColor(['#FF8C00', '#A52A2A', '#FF7F50', '#8B0000']),
       pipeSizePosA.pipeTop.pos,
       pipeSizePosA.pipeTop.size,
     ),
@@ -35,7 +35,7 @@ export default restart = () => {
     ObstacleBottom1: Obstacle(
       world,
       'ObstacleBottom1',
-      'blue',
+      randomColor(['#5F9EA0', '#6495ED', '#00008B', '#008B8B']),
       pipeSizePosA.pipeBottom.pos,
       pipeSizePosA.pipeBottom.size,
     ),
@@ -43,7 +43,7 @@ export default restart = () => {
     ObstacleTop2: Obstacle(
       world,
       'ObstacleTop2',
-      'red',
+      randomColor(['#FF8C00', '#A52A2A', '#FF7F50', '#8B0000']),
       pipeSizePosB.pipeTop.pos,
       pipeSizePosB.pipeTop.size,
     ),
@@ -51,7 +51,7 @@ export default restart = () => {
     ObstacleBottom2: Obstacle(
       world,
       'ObstacleBottom2',
-      'blue',
+      randomColor(['#5F9EA0', '#6495ED', '#00008B', '#008B8B']),
       pipeSizePosB.pipeBottom.pos,
       pipeSizePosB.pipeBottom.size,
     ),
