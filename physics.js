@@ -14,7 +14,7 @@ const Physics = (entities, { touches, time, dispatch }) => {
     .forEach((t) => {
       Matter.Body.setVelocity(entities.Bird.body, {
         x: 0,
-        y: -7,
+        y: -8,
       });
     });
 

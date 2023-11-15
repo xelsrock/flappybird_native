@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { GameEngine } from 'react-native-game-engine';
 import entities from './entities';
 import Physics from './physics';
@@ -45,6 +45,8 @@ export default function App() {
           source={require('./assets/img/bg.jpg')}
           resizeMode="cover"
           style={styles.image} /> */}
+          <Image source={require('./assets/img/moon.png')} style={styles.moon}/>
+          <Image source={require('./assets/img/cloud.png')} style={styles.cloud}/>
         <StatusBar style="auto" hidden={true} />
       </GameEngine>
 
@@ -80,6 +82,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   points: {
+    color: '#333',
     textAlign: 'center',
     fontSize: 40,
     fontWeight: 'bold',
@@ -103,4 +106,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
   },
+  moon: {
+    position: 'absolute',
+    top: 30,
+    left: 40,
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    zIndex: -1,
+  },
+  cloud: {
+    position: 'absolute',
+    top: 30,
+    right: 40,
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    zIndex: -1,
+  }
 });

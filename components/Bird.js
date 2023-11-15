@@ -13,7 +13,7 @@ const Bird = (props) => {
 
   return (
     <Image
-      source={require('../assets/img/bird.jpg')}
+      source={require('../assets/img/bird.png')}
       style={{
         // borderRadius: 10,
         // borderWidth: 1,
@@ -25,6 +25,7 @@ const Bird = (props) => {
         top: yBody,
         width: widthBody,
         height: heightBody,
+        resizeMode: 'contain',
       }}
     />
   );
